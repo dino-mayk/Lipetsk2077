@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<link href="{% static 'apps/base.css' %}" rel="stylesheet">
+
+<section class="welcome">
+    <div class="container">
+      <div class="welcome__text">
+        <h1 class="welcome__title">Будущее региона: новые профессии</h1>
+        <p class="welcome__desc">Описание сайта и его цели</p>
+        <a class="btn" href="#jump">Профессии</a>
+      </div>
+      <div class="welcome__img">
+        <img src="{% static 'apps/homepage/32512312.png' %}" alt="мальчик" class="">
+      </div>
+    </div>
+</section>
+<section class="prof__list">
+    <div class="container">
+      <div class="slider" id="jump">
+        <img class="prev controlls" alt="left" src="{% static 'apps/homepage/left.png' %}">
+        <div class="cart active">
+          <div class="text__card">
+            <h4>Професия 1</h4>
+            <p>Описание</p>
+          </div>
+          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
+        </div>
+        <div class="cart">
+          <div class="text__card">
+            <h4>Професия 2</h4>
+            <p>Описание</p>
+          </div>
+          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
+        </div>
+        <div class="cart">
+          <div class="text__card">
+            <h4>Професия 3</h4>
+            <p>Описание</p>
+          </div>
+          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
+        </div>
+        <img class="next controlls" alt="right" src="{% static 'apps/homepage/right.png' %}">
+      </div>
+      <script src="{% static 'apps/base.js' %}"></script>
+    </div>
+</section>
+
+{% endblock %}
