@@ -265,3 +265,134 @@ h1, h2, h3, h4 {
   background: #ff9842;
   transition: background-color 0.3s;
 }
+
+.container__sort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown{
+  width: 104px;
+  height: 35px;
+}
+.dropdown button{
+  background-color: #ff7300;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border-style: hidden;
+  border-color: #ff7300;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.dropdown a{
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+.dropdown .content{
+  display: none;
+  position: absolute;
+  left: 43%;
+  top: 14.5%;
+  background-color: hsl(0, 0%, 100%);
+  min-width: 100px;
+  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+  border-radius: 15px;
+}
+.dropdown:hover .content{
+  display: block;
+}
+.dropdown:hover button{
+  background-color: #ff9842;
+}
+.dropdown a:hover{
+  background-color: hsl(27, 100%, 63%);
+  border-radius: 15px;
+}
+
+.container__cards {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.img__desc {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  width: 60%;
+  height: 90%;
+  border-radius: 25px;
+}
+
+.container__desc .card .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff7300;
+}
+.container__desc .card .icon .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #fff;
+}
+.container__desc .card .slide {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+.container__desc .card .slide.slide1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: .7s;
+  transform: translateY(100px);
+}
+
+.container__desc .card:hover .slide.slide1{
+  transform: translateY(0px);
+
+}
+
+.container__desc .card .slide.slide2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: .8s;
+  transform: translateY(-100px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+
+}
+
+.container__desc .card:hover .slide.slide2{
+  transform: translateY(0);
+
+}
+
+.container__desc .card .slide.slide2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #414141;
+}
+
+.container__desc .card .slide.slide2 .content h3 {
+  margin: 0 0 0 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #414141;
+}

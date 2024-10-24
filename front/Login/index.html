@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Auth</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Регистрация</h1>
+                <input type="text" placeholder="Имя">
+                <input type="email" placeholder="Почта">
+                <input type="password" placeholder="Пароль">
+                <button>продолжить</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1 class="sign-in__h1">Авторизация</h1>
+                <input type="email" placeholder="Почта">
+                <input type="password" placeholder="Пароль">
+                <button>вход</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Добро пожаловать</h1>
+                    <p>Зарегистрируйтесь, указав свои личные данные, чтобы использовать все функции сайта</p>
+                    <button class="hidden" id="login">Авторизация</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>С возвращением!</h1>
+                    <p>Введите свои личные данные, чтобы использовать все функции сайта</p>
+                    <button class="hidden" id="register">Регистрация</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
