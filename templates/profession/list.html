@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="prof_lst">
+    <div class="container__sort">
+      <div class="dropdown">
+        <button>Сортировка</button>
+        <div class="content">
+          {% for sector in sectors %}
+            <a href="?sector={{ sector.title }}">{{ sector.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {% for profession in professions %}
+        {% include 'includes/profession_card.html' with profession=profession %}
+      {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

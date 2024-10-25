@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="prof__cart">
+    <div class="prof__cart__name__desc">
+      <h2 class="prof__name">{{ profession.title }}</h2>
+      <p class="prof__desc">{{ profession.description }}</p>
+      <a class="btn2" href="{{ profession.study }}" target="_blank">Обучение</a>
+    </div>
+    <img src="{{ profession.photo.url }}" alt="prof" class="prof__cart__img">
+</div>

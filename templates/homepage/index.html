@@ -5,8 +5,6 @@
 {% block content %}
 
 
-<link href="{% static 'apps/base.css' %}" rel="stylesheet">
-
 <section class="welcome">
     <div class="container">
       <div class="welcome__text">
@@ -23,30 +21,17 @@
     <div class="container">
       <div class="slider" id="jump">
         <img class="prev controlls" alt="left" src="{% static 'apps/homepage/left.png' %}">
-        <div class="cart active">
-          <div class="text__card">
-            <h4>Професия 1</h4>
-            <p>Описание</p>
+        {% for profession in first_professions %}
+          <div class="cart">
+            <div class="text__card">
+              <h4>{{ profession.title }}</h4>
+              <p>{{ profession.description }}</p>
+            </div>
+            <img class="cart__img" src="{{ profession.photo.url }}">
           </div>
-          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
-        </div>
-        <div class="cart">
-          <div class="text__card">
-            <h4>Професия 2</h4>
-            <p>Описание</p>
-          </div>
-          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
-        </div>
-        <div class="cart">
-          <div class="text__card">
-            <h4>Професия 3</h4>
-            <p>Описание</p>
-          </div>
-          <img class="cart__img" src="{% static 'apps/homepage/32512312.png' %}">
-        </div>
+        {% endfor %}
         <img class="next controlls" alt="right" src="{% static 'apps/homepage/right.png' %}">
       </div>
-      <script src="{% static 'apps/base.js' %}"></script>
     </div>
 </section>
 
