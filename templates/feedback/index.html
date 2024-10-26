@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container my-5 p-2">
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <input class="btn" type="submit" value="Отправить">
+    </form>
+</div>
+{% endblock %}

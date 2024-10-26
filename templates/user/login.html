@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link href="{% static 'apps/user/login.css' %}" rel="stylesheet">
+
+<div class="container" id="container">
+    <div class="form-container sign-up">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+    <div class="form-container sign-in">
+        <form method="POST" action="{% url 'user:login' %}">
+            {% csrf_token %}
+            <h1 class="sign-in__h1">Авторизация</h1>
+            <input type="text" name="username" placeholder="Имя пользователя">
+            <input type="password" name="password" placeholder="Пароль">
+            <button type="submit">вход</button>
+        </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <h1>Добро пожаловать</h1>
+                <p>Зарегистрируйтесь, указав свои личные данные, чтобы использовать все функции сайта</p>
+                <button class="hidden" id="login">Авторизация</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>С возвращением!</h1>
+                <p>Введите свои личные данные, чтобы использовать все функции сайта</p>
+                <button class="hidden" id="register">Регистрация</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'apps/user/login.js' %}"></script>
+
+{% endblock %}

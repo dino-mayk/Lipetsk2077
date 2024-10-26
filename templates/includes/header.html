@@ -2,15 +2,19 @@
 
 <header class="header">
     <div class="container header__container">
-      <h1 class="header__h1">LOGO</h1>
+      <h1 class="header__h1">Lipetsk2077</h1>
       <nav class="header__nav">
         <ul class="header__list">
           <li><a class="active" href="{% url 'homepage:index' %}">Главная</a></li>
           <li><a href="{% url 'profession:list' %}">Профессии</a></li>
-          <li><a href="#">Отзывы</a></li>
+          <li><a href="{% url 'feedback:list' %}">Отзывы</a></li>
           <li><a href="{% url 'about:index' %}">О нас</a></li>
         </ul>
       </nav>
-      <a class="btn" href="#">Личный кабинет</a>
+      {% if user.is_authenticated %}
+        <a class="btn" href="{% url 'user:profile' %}">Личный кабинет</a>
+      {% else %}
+        <a class="btn" href="{% url 'user:login' %}">Вход</a>
+      {% endif %}
     </div>
 </header>

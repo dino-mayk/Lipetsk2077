@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="prof_lst">
+    <div class="container">
+      {% for feedback in feedbacks %}
+        {% include 'includes/feedback_card.html' with feedback=feedback %}
+      {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="prof_lst">
+    <div class="container">
+      <div class="piple__cart">
+        <div class="piple__cart__name">
+          <h2 class="piple__name">Имя: {{ user.username }}</h2>
+          <a class="btn4" href="{% url 'feedback:index' %}">Оставить отзыв</a>
+          <a class="btn2" href="{% url 'user:logout' %}" style="margin-top: 10px;">Выйти</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}
