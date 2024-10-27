@@ -26,13 +26,18 @@ def login_view(request):
 
 
 def register(request):
+    form = UserCreationForm()
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        User.objects.create_user(username=username, password=password)
-        return redirect('homepage:index')
-    else:
-        form = UserCreationForm()
+        try:
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            User.objects.create_user(username=username, password=password)
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+            return redirect('homepage:index')
+        except Exception:
+            return render(request, 'user/login.html', {'form': form})
     return render(request, 'user/login.html', {'form': form})
 
 
