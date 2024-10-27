@@ -1,8 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 
-from user.forms import LoginForm, RegisterForm
+from user.forms import LoginForm
 
 
 def login_view(request):
@@ -25,12 +27,12 @@ def login_view(request):
 
 def register(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('homepage:index')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        User.objects.create_user(username=username, password=password)
+        return redirect('homepage:index')
     else:
-        form = RegisterForm()
+        form = UserCreationForm()
     return render(request, 'user/login.html', {'form': form})
 
 

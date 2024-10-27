@@ -5,10 +5,33 @@
       <h1 class="header__h1">Lipetsk2077</h1>
       <nav class="header__nav">
         <ul class="header__list">
-          <li><a class="active" href="{% url 'homepage:index' %}">Главная</a></li>
-          <li><a href="{% url 'profession:list' %}">Профессии</a></li>
-          <li><a href="{% url 'feedback:list' %}">Отзывы</a></li>
-          <li><a href="{% url 'about:index' %}">О нас</a></li>
+          {% with request.resolver_match.view_name as view_name %}
+
+            {% if view_name == 'homepage:index' %}
+              <li><a class="active" href="{% url 'homepage:index' %}">Главная</a></li>
+            {% else %}
+              <li><a href="{% url 'homepage:index' %}">Главная</a></li>
+            {% endif %}
+
+            {% if view_name == 'profession:list' %}
+              <li><a class="active" href="{% url 'profession:list' %}">Профессии</a></li>
+            {% else %}
+              <li><a href="{% url 'profession:list' %}">Профессии</a></li>
+            {% endif %}
+
+            {% if view_name == 'feedback:list' %}
+              <li><a class="active" href="{% url 'feedback:list' %}">Отзывы</a></li>
+            {% else %}
+              <li><a href="{% url 'feedback:list' %}">Отзывы</a></li>
+            {% endif %}
+
+            {% if view_name == 'about:index' %}
+              <li><a class="active" href="{% url 'about:index' %}">О нас</a></li>
+            {% else %}
+              <li><a href="{% url 'about:index' %}">О нас</a></li>
+            {% endif %}
+
+          {% endwith %}
         </ul>
       </nav>
       {% if user.is_authenticated %}
