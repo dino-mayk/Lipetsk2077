@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="prof__cart">
+    <div class="prof__cart__name__desc">
+        <h2 class="prof__name">{{ event.title }}</h2>
+        <p class="prof__desc">{{ event.description }}</p>
+        <p class="prof__desc">{{ event.schedule }}</p>
+    </div>
+    <img src="{{ event.image.url }}" alt="prof" class="prof__cart__img">
+</div>

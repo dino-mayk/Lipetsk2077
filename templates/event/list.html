@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="prof_lst">
+    <div class="container__sort">
+      <div class="dropdown">
+        <button>Сортировка</button>
+        <div class="content">
+            <a href="?event_type=1">Онлайн</a>
+            <a href="?event_type=2">Оффлайн</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      {% for event in events %}
+        {% include 'includes/event_card.html' with event=event %}
+      {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

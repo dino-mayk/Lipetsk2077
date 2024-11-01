@@ -11,6 +11,7 @@ urlpatterns = [
     path('about/', include('about.urls'), name='about'),
     path('auth/', include('user.urls'), name='user'),
     path('feedback/', include('feedback.urls'), name='feedback'),
+    path('event/', include('event.urls'), name='event'),
 ]
 
 if settings.DEBUG:

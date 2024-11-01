@@ -25,7 +25,7 @@ def done(request):
 
 def list(request):
     template_name = 'feedback/list.html'
-    feedbacks = models.Feedback.objects.all()
+    feedbacks = models.Feedback.objects.all()[::-1]
 
     context = {
         'feedbacks': feedbacks,

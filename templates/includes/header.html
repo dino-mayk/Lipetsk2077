@@ -19,6 +19,12 @@
               <li><a href="{% url 'profession:list' %}">Профессии</a></li>
             {% endif %}
 
+            {% if view_name == 'event:list' %}
+              <li><a class="active" href="{% url 'event:list' %}">События и мероприятия</a></li>
+            {% else %}
+              <li><a href="{% url 'event:list' %}">События и мероприятия</a></li>
+            {% endif %}
+
             {% if view_name == 'feedback:list' %}
               <li><a class="active" href="{% url 'feedback:list' %}">Отзывы</a></li>
             {% else %}

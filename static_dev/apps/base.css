@@ -125,6 +125,7 @@ h1, h2, h3, h4 {
 }
 
 .slider {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,6 +150,7 @@ h1, h2, h3, h4 {
 }
 
 .cart.active {
+  margin-top: 20px;
   opacity: 1;
 }
 
@@ -231,6 +233,7 @@ h1, h2, h3, h4 {
 }
 
 .prof__cart__img {
+  border-radius: 15px;
   width: 500px;
   height: 350px;
 }

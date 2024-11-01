@@ -9,7 +9,7 @@
     <div class="container">
       <div class="welcome__text">
         <h1 class="welcome__title">Будущее региона: новые профессии</h1>
-        <p class="welcome__desc">Описание сайта и его цели</p>
+        <p class="welcome__desc">Твой путеводитель в мир перспективных профессий региона.</p>
         <a class="btn" href="#jump">Профессии</a>
       </div>
       <div class="welcome__img">
@@ -27,7 +27,6 @@
               <h4>{{ profession.title }}</h4>
               <p>{{ profession.description }}</p>
             </div>
-            <img class="cart__img" src="{{ profession.photo.url }}">
           </div>
         {% endfor %}
         <img class="next controlls" alt="right" src="{% static 'apps/homepage/right.png' %}">
